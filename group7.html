@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Free Codecamp Survey Form</h1>
+    <p id="description">Thank you for making the time to help us improve the platform</p>
+    <form id="survey-form">
+        <label for="name" id="name-label">Name</label>
+        <input required type="text" id="name" placeholder="John doe">
+        <label for="email" id="email-label">Email</label>
+        <input required type="email" id="email" placeholder="example@gmail.com">
+        <label for="number" id="number-label">Age(optional):</label>
+        <input required type="number" id="number" min="10" max="20"placeholder="15">
+        <p>Which option bes describe your current row</p>
+        <select id="dropdown">
+            <option value="" disabled selected>Select an option</option>
+            <option value="fulltime-job">Full time learner</option>
+            <option value="fulltime-job">Full time job</option>
+        </select>
+        <p>Would you recommend freecodecamp to a friend</p>
+        <label for="definitely">Definitely</label>
+        <input type="radio" name="color" value="definitely">
+        <label for="color">Maybe</label>
+        <input type="radio" name="color" value="maybe">
+        <label for="not-sure">Not sure</label>
+        <input type="radio" name="color" value="not-sure">
+        <p>what would you like to see improve(check all that apply)</p>
+        <label for="front-end project">Front-end Project</label>
+        <input type="checkbox" value="front-end project">
+        <label for="back-end project">Back-end project</label>
+        <input type="checkbox" value="back-end Project">
+        <label for="data-visualisation">Data Visualisation</label>
+        <input type="checkbox" value="data-visualisation">
+        <label for="challenges">Challenges</label>
+        <input type="checkbox" value="challenges">
+        <label for="opensource-community">Open Source Community</label>
+        <input type="checkbox" value="opensource-community">
+        <label for="gitterhelp-room">Gitter Help Room</label>
+        <input type="checkbox" value="gitterhelp-room">
+        <p>Any comments or suggestions?</p>
+        <textarea name="comments" id="comments" rows="5" cols="20" placeholder="Enter your comment here...."></textarea><br>
+        <button id="submit">Submit</button>
+    </form>
+</body>
+</html>
