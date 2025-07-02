@@ -1,0 +1,45 @@
+body {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    min-height: calc(100% - 100px);
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+header span {
+    font-weight: bold;
+}
+
+
+hr {
+    width: 50%;
+    border: 1px solid;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 10px 90px;
+}
+
+section {
+    width: 50vw;
+    background: aqua;
+    border-radius: 5%;
+    margin: 30px auto;
+    padding: 10px 20px;
+    width: 85%;
+}
+
+ul {
+    list-style: none;
+}

@@ -1,0 +1,61 @@
+.mycontainer {
+    width: 500PX;
+    height: 600px;
+    background-color: white;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
+}
+
+.seperate1 {
+    background-color: rgb(167, 233, 167);
+    width: 400px;
+    align-items: center;
+    min-height: 100px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.todo-list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.todo-list ul {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+ul {
+    padding-left: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 20px;
+}
+
+
+.sub-item-link {
+    text-decoration: none;
+    color: blue;
+}
+
+a.sub-item-link:visited {
+    color: aqua;
+}
+
+a.sub-item-link:hover {
+    color: tomato;
+}
+
+a.sub-item-link:focus {
+    color: darkorchid;
+}
+
+a.sub-item-link:active {
+    color: purple;
+}

@@ -1,0 +1,32 @@
+.blog-post-card {
+    background-color: white;
+    border-radius: 10px;
+    width: 273px;
+    text-align: center;
+    margin-left: 38%;
+    margin-top: 150px;
+}
+
+.post-img {
+    width: 290px;
+    border-bottom: 20px;
+}
+
+.post-content {
+    padding-left: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 273px;
+    text-align: center;
+    background-color: aqua;
+}
+
+.blog-post-card,
+.post-content {
+    background-color: aqua;
+    color: black;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
