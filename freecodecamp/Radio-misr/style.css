@@ -1,0 +1,132 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+ }
+
+ body {
+     font-family: 'Roboto', sans-serif;
+     background-color: white;
+     color: #333;
+ }
+
+ header {
+     background-color: #004080;
+     color: white;
+     padding: 20px;
+     text-align: center;
+ }
+
+ #home {
+     min-height: calc(100vh - 64px);
+     min-width: 100vw;
+     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/1.jpg);
+     background-position: center;
+     background-size: cover;
+     position: relative;
+ }
+
+ .text-box {
+     width: 90%;
+     color: #fff;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+ }
+
+ nav {
+     background-color: #003366;
+     display: flex;
+     justify-content: center;
+     padding: 10px;
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+ }
+
+ nav a {
+     color: white;
+     text-decoration: none;
+     margin: 0 15px;
+     font-weight: bold;
+     transition: color 0.3s;
+ }
+
+ nav a:hover {
+     color: #ffcc00;
+ }
+
+ section {
+     padding: 60px 20px;
+     max-width: 1000px;
+     margin: auto;
+     border-bottom: 1px solid #ddd;
+ }
+
+ #services {
+     width: 80%;
+     margin: auto;
+     text-align: center;
+     padding-top: 100px;
+ }
+
+ .service-container {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 20px;
+     padding: 40px 20px;
+ }
+
+ .servive-col {
+     flex: 1 1 calc(25% - 20px);
+     border-radius: 8px;
+     padding: 20px;
+     text-align: center;
+ }
+
+ .servive-col img {
+     width: 100%;
+     height: auto;
+     margin-bottom: 10px;
+     border-radius: 10px;
+ }
+
+ section h2 {
+     color: #f4f4f5;
+     margin-bottom: 20px;
+     font-size: 62px;
+     font-family: sans-serif;
+ }
+
+ ul {
+     list-style: none;
+     padding-left: 20px;
+ }
+
+ footer {
+     background-color: #004080;
+     color: white;
+     text-align: center;
+     padding: 20px;
+ }
+
+ @media (max-width: 600px) {
+     nav {
+         flex-direction: row;
+         justify-content: space-between;
+     }
+
+     nav a {
+         margin: 10px 0;
+     }
+ }
+
+ @media (max-width: 600px) {
+     .servive-col {
+         flex: 1 1 100%;
+     }
+ }
