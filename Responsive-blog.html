@@ -5,18 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Responsive Navbar</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="test3.css" />
+  <link rel="stylesheet" href="Responsive.css" />
  </head>
  <body>
+
+<!-- Sidebar -->
+<aside class="sidebar" role="navigation" aria-label="Sidebar Navigation">
+  <div class="sidebar-logo">
+    <i class="bx bx-bug-alt"></i>
+    <span>LOGO</span>
+  </div>
+  <div class="sidebar-label">Nested List</div>
+  <ul class="sidebar-menu">
+    <li>
+      <a href="#sent">
+        <i class="bx bx-send"></i>
+        Sent
+      </a>
+    </li>
+    <li>
+      <a href="#drafts">
+        <i class="bx bx-envelope"></i>
+        Drafts
+      </a>
+    </li>
+    <li class="expanded">
+      <a href="#inbox">
+        <i class="bx bx-inbox"></i>
+        Inbox
+        <i class="bx bx-chevron-down chevron"></i>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<div class="content">
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <!-- Hamburger Toggle Button -->
+<button class="menu-toggle" aria-label="Toggle Sidebar">
+  <i class="bx bx-menu"></i>
+</button>
     <div class="search-container">
       <label for="search" class="visually-hidden">Search</label>
       <input type="text" id="search" placeholder="Search..." aria-label="Search" />
       <i class="bx bx-search search-icon" aria-hidden="true"></i>
     </div>
+
     <div class="profile-section">
-      <i class="bx bx-bell" role="button" tabindex="0" aria-label="Notifications"></i>
-      <i class="bx bx-cog" role="button" tabindex="0" aria-label="Settings"></i>
+      <i class="bx bx-shopping-bag" role="button" tabindex="0" aria-label="Notifications"></i>
+      <i class="bx bx-bell" role="button" tabindex="0" aria-label="Settings"></i>
       <div class="profile" role="link" tabindex="0" aria-label="User Profile">
         <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHBob3RvfGVufDB8fDB8fHww" alt="User profile picture" />
         <span>Mujeeb</span>
@@ -32,8 +69,7 @@
     <div class="logo"><h1>mujeeb Website</h1></div>
   </div>
   <div class="image">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?
- auto=format&fit=crop&w=1920&q=80" alt="Forest landscape">
+    <img src="https://cdn.filtergrade.com/wp-content/uploads/2021/12/10130257/aleks-dorohovich-nJdwUHmaY8A-unsplash-1536x1030.jpg" alt="Forest landscape">
   </div>
   <p class="p1">5 minute read</p>
 
@@ -64,8 +100,7 @@
           auctor orci at accumsan. In nec orci ultrices, venenatis tellus sit amet, pellentesque ligula. Nam imperdiet tempor congue. Ut ornare urna ipsum, nec blandit nunc blandit ut.</p>
           </div>
           <div class="left2">
-            <img class="style-image" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?
- auto=format&fit=crop&w=1920&q=80" alt="Forest landscape">
+            <img class="style-image" src="https://peacefulsoul.co/wp-content/uploads/2018/12/Countryside-New-Experiences.jpg" alt="Forest landscape">
           </div>
           <h1 class="h2">Fusce mollis sed elit in luctus</h1>
           <div class="layout2">
@@ -109,12 +144,34 @@
                    <img src="https://images.unsplash.com/photo-1606122017369-d782bbb78f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHBob3RvfGVufDB8fDB8fHww" alt="Forest lansdscape">
                    <i class="bx bx-chevron-right" role="button" tabindex="0" aria-label="Notifications"></i>
                 </div>
-                </div>
+              </div>
                 <div class="finishing">
                     <p class="p6">© 2023. All rights reserved</p>
                       <p class="p6">Help  Terms and Conditions</p>
                   </div>
                 </div>
               </div>
- </body>
- </html>
+            </div>
+
+            <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const content = document.querySelector('.content');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  // Optional: Hide sidebar when clicking outside (mobile)
+  document.addEventListener('click', (e) => {
+    if (
+      window.innerWidth <= 768 &&
+      !sidebar.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+              </body>
+              </html>

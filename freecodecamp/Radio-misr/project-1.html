@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Misr</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: #b30000;
+        color: #fff;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      header .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+      nav {
+        display: flex;
+        gap: 25px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.5s;
+      }
+      nav a:hover {
+        color: rgb(117, 117, 245);
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          padding: 5px;
+        }
+        nav {
+          justify-content: space-between;
+          flex-direction: row;
+          gap: 10px;
+          width: 100%;
+        }
+      }
+
+      .hero {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.4) 50%
+          ),
+          url(https://peacefulsoul.co/wp-content/uploads/2018/12/Countryside-New-Experiences.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+      }
+      .hero .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .hero .buttons a {
+        background: #fff;
+        color: #b30000;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .hero .buttons a:hover {
+        background: #ddd;
+      }
+      .offerings {
+        background: #fff;
+        text-align: center;
+        padding: 70px 20px;
+      }
+      .offerings h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        color: #b30000;
+      }
+      .offer-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      .offer {
+        background: #fdfdfd;
+        width: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        padding: 10px;
+      }
+      .offer:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      }
+      .offer img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+      }
+      .offer h3 {
+        padding: 15px;
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      .products {
+        padding: 60px 20px;
+        text-align: center;
+        background: #f9f9f9;
+      }
+      .products h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #222;
+      }
+      .product-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .product-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        width: 280px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+      .product-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+      .product-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .product-card p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .product-card .price {
+        font-weight: bold;
+        color: #e63946;
+        display: block;
+        margin-bottom: 15px;
+      }
+      .product-card button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        background: #0077b6;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .product-card button:hover {
+        background: #023e8a;
+      }
+
+      footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 50px;
+      }
+
+      .contact {
+        color: #fff;
+        padding: 80px 20px;
+        position: relative;
+      }
+      .contact-overlay {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.4) 50%
+          ),
+          url(https://plus.unsplash.com/premium_photo-1665203604603-e097954797e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29udGFjdCUyMHVzfGVufDB8fDB8fHww);
+        background-position: center;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+        padding: 60px 20px;
+        border-radius: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ffd700;
+      } /* Accent color */
+      .contact p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+      }
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+      }
+      /* Form Styling */
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 450px;
+      }
+      .contact input,
+      .contact textarea {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+      .contact button {
+        padding: 15px 20px;
+        background: #ffd700; /* Gold button */
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .contact button:hover {
+        transform: scale(1.05);
+      }
+      /* Contact Info Styling */
+      .contact-info {
+        text-align: left;
+        max-width: 300px;
+        font-size: 1.1rem;
+      }
+      .contact-info p {
+        margin-bottom: 15px;
+      }
+      /* Responsive for small screens */
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .contact-info {
+          text-align: center;
+        }
+      }
+
+      footer p {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">📻 Radio Misr</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#offerings">Offerings</a>
+        <a href="#contact">Contact</a>
+        <a href="#products">Products</a>
+      </nav>
+    </header>
+    <section class="hero" id="home">
+      <h1>Welcome to Radio Misr</h1>
+      <p>
+        Your trusted partner in wireless communication and engineering
+        solutions.
+      </p>
+    </section>
+    <!-- 
+�
+�
+ Product Section -->
+    <section class="products" id="products">
+      <h2>Our Products</h2>
+      <div class="product-list">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1692198552910-ccaa39a6aba4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2Fsa2llJTIwdGFsa2llfGVufDB8fDB8fHww"
+            alt="Walkie Talkie"
+          />
+          <h3>Walkie Talkie</h3>
+          <p>Durable two-way communication device with long battery life.</p>
+          <span class="price">$120</span>
+          <button>Buy Now</button>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1724689830597-4374001ccc6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGlnaCUyMGdhaW4lMjBhbnRlbm5hfGVufDB8fDB8fHww"
+            alt="Antenna"
+          />
+          <h3>High Gain Antenna</h3>
+          <p>Boosts your wireless range and provides crystal clear signal.</p>
+          <span class="price">$75</span>
+          <button>Buy Now</button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1589001879455-8427061ff67f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBoZWFkc2V0fGVufDB8fDB8fHww"
+            alt="Headset"
+          />
+          <h3>Wireless Headset</h3>
+          <p>Comfortable headset for hands-free communication.</p>
+          <span class="price">$55</span>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </section>
+    <section class="offerings" id="offerings">
+      <h2>What We Offer</h2>
+      <div class="offer-list">
+        <div class="offer">
+          <img
+            src="https://media.istockphoto.com/id/1856724784/photo/male-and-female-engineers-working-on-construction-site-they-are-monitoring-the-buildings.webp?a=1&b=1&s=612x612&w=0&k=20&c=IE57FinMDga9CVCJDZIzENlWVTR1DSzesWxb-qn--Og="
+            alt="Live Shows"
+          />
+          <h3>Reliable Field Support, anytime,anywhere</h3>
+          <p>
+            Our trained professionals are eqiupped handle on-site challenges
+            with prescision and speed, ensuring communication systems stay
+            operational no matter the conditions
+          </p>
+        </div>
+        <div class="offer">
+          <img
+            src="https://media.istockphoto.com/id/1143777483/photo/professional-industrial-climber-in-helmet-and-uniform-with-telecomunication-equipment-in-his.webp?a=1&b=1&s=612x612&w=0&k=20&c=j_fOub1FZmezsJcDA-DC283Ni3m60KNe_JKnNsKWQnU="
+            alt="News"
+          />
+          <h3>Maximize Your Coverage</h3>
+          <p>
+            We offer a range of antennas and signal enhancement tools to extend
+            reach, reduce interference, and improve clarity in challenging
+            environment
+          </p>
+        </div>
+        <div class="offer">
+          <img
+            src="https://media.istockphoto.com/id/2158270381/photo/security-system-couple.webp?a=1&b=1&s=612x612&w=0&k=20&c=uP_JGd4eWa2NB-eLXJ-J64eM6Qz7Hcpu763Z4ubHS3I="
+            alt="Podcasts"
+          />
+          <h3>Expert Setup, Lasting Performance</h3>
+          <p>
+            Our technicians handle full installation, calibration and ongoing
+            maintenance to ensure your communication systems runs smoothly and
+            efficiently.
+          </p>
+        </div>
+        <div class="offer">
+          <img
+            src="https://media.istockphoto.com/id/1341631834/photo/global-connection-lines-global-business-data-exchange-travel-routes-multi-colored.jpg?s=612x612&w=0&k=20&c=YEOctiwILnqHNXp1Dq6-VieWmZsHUg_Z_7HdYjlfGFo="
+            alt="Music"
+          />
+          <h3>Connected Infracture, Global Reach</h3>
+          <p>
+            Our solutions support scalable communication that span industries
+            and geographies-empowering teams with reliable secure and
+            far-reaching conectivity.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="contact-overlay">
+        <h2>Contact Us</h2>
+        <p>
+          We’d love to hear from you! Send us a message or reach out directly.
+        </p>
+        <div class="contact-container">
+          <!-- Contact Form -->
+          <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <p>📍 Cairo, Egypt</p>
+            <p>📧 info@radiomisr.com</p>
+            <p>📞 +20 123 456 789</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="contact">
+      <p>© 2025 Radio Misr. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
